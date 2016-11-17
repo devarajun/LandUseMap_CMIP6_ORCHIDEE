@@ -539,9 +539,9 @@ for i in range(nyears-1):
 	re_bsoil_b = bsoil_p + excess_anthb
 	bsoil_bnow  = MV2.where(re_bsoil_b<0,0.,re_bsoil_b)
 	print 'bsoil_bnow',bsoil_bnow.shape
-	#x.plot(re_bsoil_b[::-1,:],gm,bg=bg)
-	#x.png('re_bsoil_b.png')
-	#x.clear()
+	x.plot(re_bsoil_b[::-1,:],gm,bg=bg)
+	x.png('re_bsoil_b.png')
+	x.clear()
 	tottree_b = MV2.where(tottree_b<0.,0.,tottree_b)
 	totngr_b   = MV2.where(totngr_b<0.,0.,totngr_b)
 	totnveg_b = tottree_b + totngr_b 
@@ -612,9 +612,9 @@ for i in range(nyears-1):
 
 	#Sum of all 19 new PFTs
 	pft_backSUM = MV2.sum(pft_back[nyr-j,:,:,:], axis=0)+icwtr
-	#x.plot(pft_backSUM[::-1,:],gm,bg=bg)
-	#x.png('pft_backSUM.png')
-	#x.clear()
+	x.plot(pft_backSUM[::-1,:],gm,bg=bg)
+	x.png('pft_backSUM.png')
+	x.clear()
 	#check if sum of all PFTs is one or not
 	#if (pft_backSUM==1):
 	#	print 'Sum of all PFTs is equal to 1'
