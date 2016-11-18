@@ -230,13 +230,13 @@ time.units = 'years since 0-1-1'
 print 'time',time.shape
 #create Level axis
 
-lev = cdms2.createAxis(range(1,20))    #PFT numbers 1 to 19 
-lev.designateLevel()
-lev.id = 'veget'
-lev.units ='-'
+lev_19 = cdms2.createAxis(range(1,20))    #PFT numbers 1 to 19 
+lev_19.designateLevel()
+lev_19.id = 'veget'
+lev_19.units ='-'
 
 #lat lon axis values are taken directly from ESA map
-pft_back = cdms2.createVariable(pft_back,axes=[time]+[lev]+set_axes,id='maxvegetfrac')
+pft_back = cdms2.createVariable(pft_back,axes=[time]+[lev_19]+set_axes,id='maxvegetfrac')
 print '--------------------------------------------------->>>>>>   4d variable',pft_back.shape
 pft_back.long_name ='Vegetation types'
 pft_back.units = '-'
