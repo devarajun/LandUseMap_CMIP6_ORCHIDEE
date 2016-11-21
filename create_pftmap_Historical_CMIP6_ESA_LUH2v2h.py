@@ -296,6 +296,7 @@ lndf_hurt = MV2.masked_array(lndf_hurt,mask=luh_mask)
 #x.plot(lndf_hurt[::-1,:],gm,bg=bg)
 #x.png('lndf_hurt.png')
 #x.clear()
+factor_esa_hurt = lndf_hurt/lndf_esa
 #==================================================================================================
 #Present day croplands from LUH data
 c3ann2010 	= c3ann[nyears-1,:,:]
