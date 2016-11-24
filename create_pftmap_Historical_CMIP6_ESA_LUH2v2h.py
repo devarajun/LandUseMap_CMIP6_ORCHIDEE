@@ -670,6 +670,17 @@ for i in range(nyears-1):
 	
 	g40 = cdms2.open('13PFTmap_%i_cmip6_LUH2v2h.nc' %fileyear,'w')#
 	g40.write(pft_13[nyr-j,:,:,:],axes = [timax_slide] + pft13_axislist_pft)
+	g40.__setattr__('Description', 'PFT map based on the ESACCI-ECV Land Cover map and LUH2v2h. Imposing land use changes \
+	from LUH2v2h and adjusting natural vegetation in the ESA map for present day. Historical reconstruction is done as documented "xxxxxx"')
+	g40.__setattr__('Contact', 'Devaraju N. (devaraju.narayanappa@lsce.ipsl.fr)')
+	g40.__setattr__('Date', datetime.datetime.now().strftime("%d/%m/%Y") )
+	g40.__setattr__('Licence', 'Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License')
+	g40.__setattr__('Projection', 'Geographic coordinate system (GCS84) / Plate Carree')
+	#g40.__setattr__('Resolution', str(grid_res))
+	g40.__setattr__('reference', 'Poulter, B, P Ciais, E Hodson, H Lischke, F Maignan, S Plummer and N Zimmermann. 2011. \
+Plant functional type mapping for Earth System Models. Geoscientific Model Development, 4:1-18.')
+	g40.__setattr__('version', 'v1.0 - based on ESA CCI LC v1.1 and LUH2v2h')
+	g40.__setattr__('recommended viewer', 'panoply')
 	g40.close()
 	#x.plot(pft13SUM[::-1,:],gm,bg=bg)
 	#x.png('pft13SUM.png')
